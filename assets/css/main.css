@@ -53,17 +53,15 @@
 }
 
 #lightbox {
+  width: 100%;
   opacity: 0;
   transition: opacity 0.2s;
   pointer-events: none;
 
   position: fixed;
   z-index: 9999;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-  width: 100%;
+  top: 0;
+  left: 0;
 }
 
 #lightbox img {
@@ -72,6 +70,11 @@
   max-width: 640px;
   border-radius: 0.5rem;
   box-shadow: 0 0 100px rgba(255, 255, 255, 0.2);
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 #lightbox.showing {
