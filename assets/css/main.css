@@ -81,3 +81,13 @@
   opacity: 1;
   pointer-events: auto;
 }
+
+.heading--section-title {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.heading--section-title + .mdc-list {
+  padding-top: 0;
+  padding-left: 0;
+}
