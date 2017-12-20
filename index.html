@@ -14,32 +14,8 @@
       rel="stylesheet"
       href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css"
     >
-    <style>
-      :root {
-        --mdc-theme-primary: #0e4ead;
-      }
 
-      #hello .mdc-card__media {
-        background-image: url("/assets/img/joesak.jpg");
-        background-size: cover;
-        background-repeat: no-repeat;
-        height: 300px;
-      }
-
-      .photo-feed__thumb {
-        display: block;
-        text-decoration: none;
-        height: 320px;
-        width: 100%;
-        background-size: cover;
-        background-repeat: no-repeat;
-      }
-
-      .mdc-dialog__body--scrollable {
-        text-align: center;
-        max-height: 550px;
-      }
-    </style>
+    <link rel="stylesheet" href="/assets/css/main.css" />
   </head>
   <body>
     <main>
@@ -94,33 +70,19 @@
           <div class="mdc-layout-grid__cell--span-12">
             Photography
             <div id="photo-feed" class="mdc-layout-grid__inner"></div>
-            <aside id="photo-feed-mdc-dialog"
-                   class="mdc-dialog"
-                   role="alertdialog"
-                   aria-labelledby="my-mdc-dialog-label"
-                   aria-describedby="my-mdc-dialog-description">
-              <div class="mdc-dialog__surface">
-                <section
-                  class="mdc-dialog__body
-                         mdc-dialog__body--scrollable"
-                >
-                  <img />
-                </section>
-                <footer class="mdc-dialog__footer">
-                  <button type="button"
-                          class="mdc-button
-                                 mdc-dialog__footer__button
-                                 mdc-dialog__footer__button--accept"
-                  >
-                    &times; close
-                  </button>
-                </footer>
-              </div>
-              <div class="mdc-dialog__backdrop"></div>
-            </aside>
           </div>
         </div>
       </div>
+
+      <aside id="lightbox-shade" class="lightbox-close">
+        <nav>
+          <a id="lightbox-close" href="#">&times;</a>
+        </nav>
+      </aside>
+
+      <aside id="lightbox" class="lightbox-close">
+        <img />
+      </aside>
     </main>
 
     <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>

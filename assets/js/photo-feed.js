@@ -1,7 +1,3 @@
-mdc.dialog.MDCDialog.attachTo(document.getElementById('photo-feed-mdc-dialog'));
-
-var dialog = new mdc.dialog.MDCDialog(document.getElementById('photo-feed-mdc-dialog'));
-
 fetch("https://api.instagram.com/v1/users/self/media/recent/?access_token=***REMOVED***")
   .then(function(resp) {
     return resp.json();
@@ -30,17 +26,39 @@ fetch("https://api.instagram.com/v1/users/self/media/recent/?access_token=***REM
       thumb.addEventListener('click', function (evt) {
         evt.preventDefault();
 
-        dialog.lastFocusedTarget = evt.target;
-
         var fullSize = document.createElement("img");
         fullSize.src = evt.target.dataset.fullSizeImg;
 
-        document.querySelector(".mdc-dialog__body img")
-          .replaceWith(fullSize);
+        document.querySelector("#lightbox img").replaceWith(fullSize);
 
-        dialog.show();
+        lightbox.open();
       })
 
       photoFeed.append(thumb);
     });
   });
+
+var lightbox = {
+  lightboxShade: document.getElementById("lightbox-shade"),
+  lightboxContainer: document.getElementById("lightbox"),
+
+  open: function() {
+    this.lightboxShade.classList.add("showing");
+    this.lightboxContainer.classList.add("showing");
+  },
+
+  close: function() {
+    this.lightboxShade.classList.remove("showing");
+    this.lightboxContainer.classList.remove("showing");
+  },
+};
+
+Array.prototype.forEach.call(
+  document.getElementsByClassName("lightbox-close"),
+  function(el) {
+    el.addEventListener("click", function(e) {
+      e.preventDefault();
+      lightbox.close();
+    });
+  }
+);
