@@ -31,32 +31,32 @@ fetch("https://api.instagram.com/v1/users/self/media/recent/?access_token=***REM
 
         var captionHTML = "";
         if (evt.target.dataset.caption != "")
-          captionHTML += "<p class='img-caption'>" +
-                           evt.target.dataset.caption +
-                         "</p>";
+          captionHTML += evt.target.dataset.caption;
 
-        if (evt.target.dataset.location != "")
-          captionHTML += "<p class='img-location'>" +
-                           evt.target.dataset.location +
-                         "</p>";
+        if (evt.target.dataset.location != "") {
+          if (captionHTML != "")
+            captionHTML += " | ";
+          captionHTML += evt.target.dataset.location;
+        }
 
         var caption = document.createElement("div");
-        caption.classList.add("caption");
-        caption.innerHTML = captionHTML;
+
+        if (captionHTML != "") {
+          caption.classList.add("caption");
+          caption.innerHTML = captionHTML;
+        }
 
         var img = document.createElement("img");
         img.src = evt.target.dataset.fullSizeImg;
 
-        var fullSize = document.createElement("div");
-        fullSize.append(img);
+        document.querySelector("#lightbox .caption-wrap div")
+          .replaceWith(caption);
 
-        if (captionHTML != "")
-          fullSize.append(caption);
-
-        document.querySelector("#lightbox > div").replaceWith(fullSize);
+        document.querySelector("#lightbox .img-wrap img")
+          .replaceWith(img);
 
         lightbox.open();
-      })
+      });
 
       photoFeed.append(thumb);
     });

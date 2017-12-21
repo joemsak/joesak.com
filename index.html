@@ -25,7 +25,7 @@
       type="text/css"
     >
 
-    <link rel="stylesheet" href="/assets/css/main.css?v=4" />
+    <link rel="stylesheet" href="/assets/css/main.css?v=5" />
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2">
   </head>
   <body>
@@ -109,19 +109,18 @@
         </div>
       </div>
 
-      <aside id="lightbox-shade" class="lightbox-close">
-        <nav>
-          <a id="lightbox-close" href="#">&times;</a>
-        </nav>
-      </aside>
-
+      <aside id="lightbox-shade" class="lightbox-close"></aside>
       <aside id="lightbox" class="lightbox-close">
-        <div />
+        <a id="lightbox-close" class="lightbox-close" href="#">
+          &times;
+        </a>
+        <div class="caption-wrap"><div></div></div>
+        <div class="img-wrap"><img /></div>
       </aside>
     </main>
 
     <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
     <script>window.mdc.autoInit();</script>
-    <script src="/assets/js/photo-feed.js?v=2"></script>
+    <script src="/assets/js/photo-feed.js?v=3"></script>
   </body>
 </html>
