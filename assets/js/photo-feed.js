@@ -79,8 +79,11 @@
       .standard_resolution
       .url;
 
-    thumb.dataset["caption"] = (imgData.caption || {}).text || "";
-    thumb.dataset["location"] = (imgData.location || {}).name || "";
+    thumb.dataset["caption"] = (imgData.caption || {}).text ||
+      "Photography by Joe Sak";
+
+    thumb.dataset["location"] = (imgData.location || {}).name ||
+      "instagram.com/sakjosep";
 
     thumb.classList.add("mdc-layout-grid__cell", "photo-feed__thumb");
 
