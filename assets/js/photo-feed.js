@@ -49,10 +49,10 @@ fetch("https://api.instagram.com/v1/users/self/media/recent/?access_token=***REM
         var img = document.createElement("img");
         img.src = evt.target.dataset.fullSizeImg;
 
-        document.querySelector("#lightbox .caption-wrap div")
+        document.querySelector("#lightbox .lightbox-header div")
           .replaceWith(caption);
 
-        document.querySelector("#lightbox .img-wrap img")
+        document.querySelector("#lightbox .lightbox-img img")
           .replaceWith(img);
 
         lightbox.open();
@@ -63,16 +63,13 @@ fetch("https://api.instagram.com/v1/users/self/media/recent/?access_token=***REM
   });
 
 var lightbox = {
-  lightboxShade: document.getElementById("lightbox-shade"),
   lightboxContainer: document.getElementById("lightbox"),
 
   open: function() {
-    this.lightboxShade.classList.add("showing");
     this.lightboxContainer.classList.add("showing");
   },
 
   close: function() {
-    this.lightboxShade.classList.remove("showing");
     this.lightboxContainer.classList.remove("showing");
   },
 };
