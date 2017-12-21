@@ -49,7 +49,7 @@
     },
   };
 
-  fetch("http://localhost:3000/")
+  fetch("http://joesak.openode.io/")
     .then(function(resp) { return resp.json(); })
     .then(function(json) {
       var data = json.data.slice(0, 12),
