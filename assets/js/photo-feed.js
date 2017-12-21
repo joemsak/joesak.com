@@ -16,6 +16,26 @@
       this.open();
     },
 
+    setNext: function(link) {
+      var nextLink = this.lightboxContainer
+                         .querySelector(".lightbox-img .next");
+
+      nextLink.dataset["idx"] = link.dataset.idx;
+      nextLink.dataset["fullSizeImg"] = link.dataset.fullSizeImg;
+      nextLink.dataset["caption"] = link.dataset.caption;
+      nextLink.dataset["location"] = link.dataset.location;
+    },
+
+    setPrev: function(link) {
+      var prevLink = this.lightboxContainer
+                         .querySelector(".lightbox-img .prev");
+
+      prevLink.dataset["idx"] = link.dataset.idx;
+      prevLink.dataset["fullSizeImg"] = link.dataset.fullSizeImg;
+      prevLink.dataset["caption"] = link.dataset.caption;
+      prevLink.dataset["location"] = link.dataset.location;
+    },
+
     _updateHeaderContent: function(caption) {
       this.lightboxContainer
         .querySelector(".lightbox-header div")
@@ -35,22 +55,25 @@
       var data = json.data.slice(0, 12),
           photoFeed = document.getElementById("photo-feed");
 
-      data.forEach(function(imgData) {
-        var thumb = createThumbnail(imgData);
+      data.forEach(function(imgData, idx) {
+        var thumb = createThumbnail(imgData, idx);
 
         photoFeed.append(thumb);
 
         thumb.addEventListener('click', function (evt) {
           evt.preventDefault();
           displayInLightbox(evt.target);
+          setNavigationData(evt.target);
         });
       });
     });
 
-  function createThumbnail(imgData) {
+  function createThumbnail(imgData, idx) {
     var thumb = document.createElement("a");
 
     thumb.href = imgData.link;
+
+    thumb.dataset["idx"] = idx;
 
     thumb.dataset["fullSizeImg"] = imgData.images
       .standard_resolution
@@ -106,12 +129,45 @@
     }
   }
 
+  function setNavigationData(link) {
+    var links = document.querySelectorAll("#photo-feed a"),
+        idx = parseInt(link.dataset.idx),
+        lastIdx = links.length - 1,
+        nextIdx = idx + 1,
+        prevIdx = idx - 1;
+
+    if (idx == lastIdx)
+      nextIdx = 0;
+
+    if (idx == 0)
+      prevIdx = lastIdx;
+
+    lightbox.setPrev(links[prevIdx]);
+    lightbox.setNext(links[nextIdx]);
+  }
+
   Array.prototype.forEach.call(
     document.getElementsByClassName("lightbox-close"),
     function(el) {
       el.addEventListener("click", function(e) {
         e.preventDefault();
-        lightbox.close();
+
+        if (e.target.classList.contains("lightbox-nav")) {
+          return;
+        } else {
+          lightbox.close();
+        }
+      });
+    }
+  );
+
+  Array.prototype.forEach.call(
+    document.getElementsByClassName("lightbox-nav"),
+    function(el) {
+      el.addEventListener("click", function(e) {
+        e.preventDefault();
+        displayInLightbox(e.target);
+        setNavigationData(e.target);
       });
     }
   );
