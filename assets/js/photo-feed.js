@@ -15,6 +15,9 @@ fetch("https://api.instagram.com/v1/users/self/media/recent/?access_token=***REM
         .standard_resolution
         .url;
 
+      thumb.dataset["caption"] = (imgData.caption || {}).text || "";
+      thumb.dataset["location"] = (imgData.location || {}).name || "";
+
       thumb.classList.add("mdc-layout-grid__cell", "photo-feed__thumb");
 
       thumb.style.backgroundImage = "url(" +
@@ -26,10 +29,31 @@ fetch("https://api.instagram.com/v1/users/self/media/recent/?access_token=***REM
       thumb.addEventListener('click', function (evt) {
         evt.preventDefault();
 
-        var fullSize = document.createElement("img");
-        fullSize.src = evt.target.dataset.fullSizeImg;
+        var captionHTML = "";
+        if (evt.target.dataset.caption != "")
+          captionHTML += "<p class='img-caption'>" +
+                           evt.target.dataset.caption +
+                         "</p>";
 
-        document.querySelector("#lightbox img").replaceWith(fullSize);
+        if (evt.target.dataset.location != "")
+          captionHTML += "<p class='img-location'>" +
+                           evt.target.dataset.location +
+                         "</p>";
+
+        var caption = document.createElement("div");
+        caption.classList.add("caption");
+        caption.innerHTML = captionHTML;
+
+        var img = document.createElement("img");
+        img.src = evt.target.dataset.fullSizeImg;
+
+        var fullSize = document.createElement("div");
+        fullSize.append(img);
+
+        if (captionHTML != "")
+          fullSize.append(caption);
+
+        document.querySelector("#lightbox > div").replaceWith(fullSize);
 
         lightbox.open();
       })
