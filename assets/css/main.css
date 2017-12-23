@@ -182,10 +182,17 @@ html {
 .heading--section-title {
   margin-top: 0;
   margin-bottom: 0;
-  text-align: center;
 }
 
 .heading--section-title + p {
   text-align: center;
 }
 
+.mdc-list {
+  padding: 0;
+}
+
+.mdc-list-item {
+  height: auto;
+  display: block;
+}
