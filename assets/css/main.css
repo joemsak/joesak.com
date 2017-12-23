@@ -2,11 +2,64 @@
   --mdc-theme-primary: #0e4ead;
 }
 
-#hello .mdc-card__media {
-  background-image: url("/assets/img/joesak.jpg?v=3");
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 300px;
+body,
+html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#hello {
+  background: #333;
+  padding: 1rem;
+}
+
+#hello h1,
+#hello h2,
+#hello h3 {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-size: 5rem;
+  width: 100%;
+  color: white;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+#hello h2 {
+  font-size: 2rem;
+}
+
+#hello__more {
+  text-align: center;
+  line-height: 1.3;
+}
+
+#hello__more h4 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.hello-more__intro {
+  font-size: 1.5rem;
+}
+
+.blockquote {
+  border-left: 15px solid rgba(0, 0, 0, 0.2);
+  font-size: 2rem;
+  opacity: 0.5;
+  font-style: italic;
+  font-family: "serif";
+}
+
+.blockquote::before {
+  content: "\201C";
+}
+
+.blockquote::after {
+  content: "\201D";
 }
 
 .photo-feed__thumb {
@@ -114,10 +167,10 @@
 .heading--section-title {
   margin-top: 0;
   margin-bottom: 0;
+  text-align: center;
 }
 
-.heading--section-title + .mdc-list {
-  padding-top: 0;
-  padding-left: 0;
+.heading--section-title + p {
+  text-align: center;
 }
 
