@@ -88,7 +88,7 @@
     thumb.classList.add("mdc-layout-grid__cell", "photo-feed__thumb");
 
     thumb.style.backgroundImage = "url(" +
-      imgData.images.low_resolution.url +
+      imgData.images.standard_resolution.url +
     ")";
 
     thumb.innerHTML = "&nbsp;";
