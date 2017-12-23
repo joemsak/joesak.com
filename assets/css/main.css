@@ -10,6 +10,11 @@ html {
   padding: 0;
 }
 
+.mdc-layout-grid--bleed-y {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
 #hello {
   background: #333;
   padding: 1rem;
@@ -17,8 +22,7 @@ html {
 }
 
 #hello h1,
-#hello h2,
-#hello h3 {
+#hello h2 {
   margin: 0;
   padding: 0;
   font-size: 5rem;
@@ -30,6 +34,16 @@ html {
 
 #hello h2 {
   font-size: 2rem;
+}
+
+@media(max-width:400px) {
+  #hello h2 {
+    font-size: 1.5rem;
+  }
+
+  .mdc-layout-grid__cell--span-2-desktop {
+    display: none;
+  }
 }
 
 #hello__more {
