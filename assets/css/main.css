@@ -62,18 +62,27 @@ html {
 
 .blockquote {
   border-left: 15px solid rgba(0, 0, 0, 0.2);
-  font-size: 2rem;
   opacity: 0.5;
-  font-style: italic;
-  font-family: "serif";
   padding-left: 1rem;
 }
 
-.blockquote::before {
+.blockquote__text {
+  font-style: italic;
+  font-family: "serif";
+  font-size: 2rem;
+}
+
+.blockquote__attribution {
+  display: block;
+  text-align: right;
+  font-size: 0.8rem;
+}
+
+.blockquote__text::before {
   content: "\201C";
 }
 
-.blockquote::after {
+.blockquote__text::after {
   content: "\201D";
 }
 
