@@ -65,7 +65,17 @@ a:hover {
   font-size: 2rem;
 }
 
+@media(min-width:400px) {
+  .hidden--desktop {
+    display: none;
+  }
+}
+
 @media(max-width:400px) {
+  #hello a {
+    display: none;
+  }
+
   #hello h2 {
     font-size: 1.5rem;
   }
