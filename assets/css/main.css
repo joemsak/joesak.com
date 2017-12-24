@@ -20,6 +20,12 @@ a:hover {
   opacity: 1;
 }
 
+@media (max-width: 400px) {
+  a {
+    opacity: 1;
+  }
+}
+
 .mdc-layout-grid--bleed-y {
   padding-top: 0;
   padding-bottom: 0;
