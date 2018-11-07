@@ -264,6 +264,12 @@ a:hover {
   color: white;
 }
 
+.hire-me__topic small {
+  display: block;
+  font-size: 1rem;
+  color: #ccc;
+}
+
 .hire-me__rate,
 .hire-me__duration,
 .hire-me__deliverables {
