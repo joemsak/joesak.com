@@ -1,5 +1,5 @@
 (function() {
   var link = document.querySelector(".email"),
-      emailReversed = "moc.kaseoj@eoj";
+      emailReversed = "moc.kaseoj@krow";
   link.href="mailto:" + emailReversed.split("").reverse().join("");
 })();
