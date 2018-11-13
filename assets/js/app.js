@@ -28,13 +28,13 @@ var SkillsInfluences = function (_React$Component) {
     value: function componentDidMount() {
       var _this2 = this;
 
-      fetch('/data/skills.js').then(function (resp) {
+      fetch('/data/skills.js?v=2').then(function (resp) {
         return resp.json();
       }).then(function (json) {
         return _this2.setState({ skills: json });
       });
 
-      fetch('/data/influences.js?v=2').then(function (resp) {
+      fetch('/data/influences.js?v=4').then(function (resp) {
         return resp.json();
       }).then(function (json) {
         return _this2.setState({ influences: json });
@@ -73,8 +73,8 @@ var SkillsInfluences = function (_React$Component) {
 
       var chunks = [];
 
-      for (var i = 0; i < items.length; i++) {
-        chunks.push(items.slice(i, i += 4));
+      for (var i = 0; i < items.length; i += 5) {
+        chunks.push(items.slice(i, i + 5));
       }
 
       return React.createElement(

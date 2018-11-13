@@ -10,11 +10,11 @@ class SkillsInfluences extends React.Component {
   }
 
   componentDidMount () {
-    fetch('/data/skills.js')
+    fetch('/data/skills.js?v=2')
       .then(resp => resp.json())
       .then(json => this.setState({ skills: json }))
 
-    fetch('/data/influences.js?v=2')
+    fetch('/data/influences.js?v=4')
       .then(resp => resp.json())
       .then(json => this.setState({ influences: json }))
   }
@@ -38,8 +38,8 @@ class SkillsInfluences extends React.Component {
   renderItems (items) {
     let chunks = []
 
-    for (let i = 0; i < items.length; i++) {
-      chunks.push(items.slice(i, i += 4));
+    for (let i = 0; i < items.length; i+=5) {
+      chunks.push(items.slice(i, i + 5))
     }
 
     return (

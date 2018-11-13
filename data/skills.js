@@ -1,5 +1,5 @@
 [
-  "UX design",
+  "Customer-centered UX",
   "Vue",
   "React",
   "HTML5",
