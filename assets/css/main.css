@@ -304,3 +304,12 @@ a:hover {
 .hire-questions__answer p {
   margin: 0 0 1rem;
 }
+
+#site-footer {
+  margin: 1rem 0 0;
+  padding: 0.5rem 1rem;
+  background: snow;
+  text-align: right;
+  font-size: 0.9rem;
+  box-shadow: 0 -0.2rem 0.7rem rgba(0, 0, 0, 0.2);
+}
