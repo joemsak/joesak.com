@@ -14,7 +14,7 @@ class SkillsInfluences extends React.Component {
       .then(resp => resp.json())
       .then(json => this.setState({ skills: json }))
 
-    fetch('/data/influences.js')
+    fetch('/data/influences.js?v=1')
       .then(resp => resp.json())
       .then(json => this.setState({ influences: json }))
   }
