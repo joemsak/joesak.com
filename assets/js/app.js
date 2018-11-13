@@ -34,7 +34,7 @@ var SkillsInfluences = function (_React$Component) {
         return _this2.setState({ skills: json });
       });
 
-      fetch('/data/influences.js').then(function (resp) {
+      fetch('/data/influences.js?v=1').then(function (resp) {
         return resp.json();
       }).then(function (json) {
         return _this2.setState({ influences: json });
