@@ -10,11 +10,11 @@ class Index extends React.Component {
   }
 
   componentDidMount () {
-    fetch('/assets/js/skills.js')
+    fetch('/data/skills.js')
       .then(resp => resp.json())
       .then(json => this.setState({ skills: json }))
 
-    fetch('/assets/js/influences.js')
+    fetch('/data/influences.js')
       .then(resp => resp.json())
       .then(json => this.setState({ influences: json }))
   }
@@ -76,5 +76,5 @@ class Index extends React.Component {
   }
 }
 
-var appEl = document.querySelector('#index-app')
+const appEl = document.querySelector('#index-app')
 ReactDOM.render(<Index />, appEl)

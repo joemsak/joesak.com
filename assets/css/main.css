@@ -313,3 +313,9 @@ a:hover {
   font-size: 0.9rem;
   box-shadow: 0 -0.2rem 0.7rem rgba(0, 0, 0, 0.2);
 }
+
+@media (max-width: 600px) {
+  #site-footer {
+    text-align: center;
+  }
+}

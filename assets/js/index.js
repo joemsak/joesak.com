@@ -28,13 +28,13 @@ var Index = function (_React$Component) {
     value: function componentDidMount() {
       var _this2 = this;
 
-      fetch('/assets/js/skills.js').then(function (resp) {
+      fetch('/data/skills.js').then(function (resp) {
         return resp.json();
       }).then(function (json) {
         return _this2.setState({ skills: json });
       });
 
-      fetch('/assets/js/influences.js').then(function (resp) {
+      fetch('/data/influences.js').then(function (resp) {
         return resp.json();
       }).then(function (json) {
         return _this2.setState({ influences: json });
