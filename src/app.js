@@ -135,7 +135,7 @@ class HireMe extends React.Component {
               <h2 class="hire-me__rate">
                 $13,000 USD / month
                 <small>
-                  Half due up front, the rest at month's end
+                  Half due up front, the rest at month&apos;s end
                 </small>
               </h2>
 
@@ -170,7 +170,7 @@ class HireMe extends React.Component {
               <h2 class="hire-me__rate">
                 $5,000 USD / month
                 <small>
-                  Half due up front, the rest at month's end
+                  Half due up front, the rest at month&apos;s end
                 </small>
               </h2>
 
@@ -308,8 +308,8 @@ class AboutMe extends React.Component {
                 </p>
 
                 <p>
-                  Good design trims away everything that's not necessary,
-                  is honest about what's not working, and promotes
+                  Good design trims away everything that&apos;s not necessary,
+                  is honest about what&apos;s not working, and promotes
                   empathy, compassion, and humans above policy, routine,
                   and expectation.
                 </p>
