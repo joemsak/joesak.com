@@ -93,11 +93,11 @@ class FAQ extends React.Component {
   renderFaq (faq, i) {
     return(
       <div key={i}>
-        <dt class="hire-questions__question">
+        <dt className="hire-questions__question">
           {faq.question}
         </dt>
 
-        <dd class="hire-questions__answer">
+        <dd className="hire-questions__answer">
           {faq.answers.map((answer, i) => this.renderAnswer(answer, i))}
         </dd>
       </div>
@@ -106,8 +106,8 @@ class FAQ extends React.Component {
 
   render () {
     return(
-      <div class="mdc-layout-grid__cell--span-12">
-        <dl class="hire-questions">
+      <div className="mdc-layout-grid__cell--span-12">
+        <dl className="hire-questions">
           {this.state.faqs.map((faq, i) => this.renderFaq(faq, i))}
         </dl>
       </div>
@@ -123,27 +123,27 @@ class HireMe extends React.Component {
 
   render() {
     return(
-      <div class="mdc-layout-grid">
-        <div class="mdc-layout-grid__inner">
-          <div class="mdc-layout-grid__cell--span-6">
-            <div class="hire-me">
-              <h1 class="hire-me__topic">
+      <div className="mdc-layout-grid">
+        <div className="mdc-layout-grid__inner">
+          <div className="mdc-layout-grid__cell--span-6">
+            <div className="hire-me">
+              <h1 className="hire-me__topic">
                 Web design &amp; development
                 <small>(business hours)</small>
               </h1>
 
-              <h2 class="hire-me__rate">
+              <h2 className="hire-me__rate">
                 $13,000 USD / month
                 <small>
                   Half due up front, the rest at month&apos;s end
                 </small>
               </h2>
 
-              <p class="hire-me__duration">
+              <p className="hire-me__duration">
                 6-8 hours a day, Mondays – Fridays
               </p>
 
-              <p class="hire-me__deliverables">
+              <p className="hire-me__deliverables">
                 <strong>
                   Services include, but are not limited to:
                 </strong>
@@ -160,25 +160,25 @@ class HireMe extends React.Component {
             </div>
           </div>
 
-          <div class="mdc-layout-grid__cell--span-6">
-            <div class="hire-me">
-              <h1 class="hire-me__topic">
+          <div className="mdc-layout-grid__cell--span-6">
+            <div className="hire-me">
+              <h1 className="hire-me__topic">
                 Web design &amp; development
                 <small>(outside of business hours)</small>
               </h1>
 
-              <h2 class="hire-me__rate">
+              <h2 className="hire-me__rate">
                 $5,000 USD / month
                 <small>
                   Half due up front, the rest at month&apos;s end
                 </small>
               </h2>
 
-              <p class="hire-me__duration">
+              <p className="hire-me__duration">
                 2-3 hours a day, Mondays – Fridays
               </p>
 
-              <p class="hire-me__deliverables">
+              <p className="hire-me__deliverables">
                 <strong>
                   Services include, but are not limited to:
                 </strong>
@@ -195,18 +195,18 @@ class HireMe extends React.Component {
             </div>
           </div>
 
-          <div class="mdc-layout-grid__cell--span-6">
-            <div class="hire-me">
-              <h1 class="hire-me__topic">
+          <div className="mdc-layout-grid__cell--span-6">
+            <div className="hire-me">
+              <h1 className="hire-me__topic">
                 Consultation
                 <small>(business hours)</small>
               </h1>
 
-              <h2 class="hire-me__rate">
+              <h2 className="hire-me__rate">
                 $80 USD / hour
               </h2>
 
-              <p class="hire-me__deliverables">
+              <p className="hire-me__deliverables">
                 <strong>
                   Services include, but are not limited to:
                 </strong>
@@ -220,18 +220,18 @@ class HireMe extends React.Component {
             </div>
           </div>
 
-          <div class="mdc-layout-grid__cell--span-6">
-            <div class="hire-me">
-              <h1 class="hire-me__topic">
+          <div className="mdc-layout-grid__cell--span-6">
+            <div className="hire-me">
+              <h1 className="hire-me__topic">
                 Consultation
                 <small>(outside of business hours)</small>
               </h1>
 
-              <h2 class="hire-me__rate">
+              <h2 className="hire-me__rate">
                 $150 USD / hour
               </h2>
 
-              <p class="hire-me__deliverables">
+              <p className="hire-me__deliverables">
                 <strong>
                   Services include, but are not limited to:
                 </strong>
@@ -246,21 +246,21 @@ class HireMe extends React.Component {
           </div>
 
           <div
-            class="
+            className="
               mdc-layout-grid__cell--span-12
               mdc-layout-grid__cell--centered
             "
           >
             <p>Specific deliverables to be outlined in contract.</p>
             <p>
-              <a class="email" href="#">
+              <a className="email" href="#">
                 Email me to get started
               </a>
             </p>
           </div>
 
           <div
-            class="
+            className="
               hidden--desktop
               mdc-layout-grid__cell--span-12
               mdc-layout-grid__cell--centered
@@ -286,13 +286,13 @@ class AboutMe extends React.Component {
   render() {
     return(
       <div>
-        <div class="mdc-layout-grid">
-          <div class="mdc-layout-grid__inner">
-            <div class="mdc-layout-grid__cell--span-2-desktop">
+        <div className="mdc-layout-grid">
+          <div className="mdc-layout-grid__inner">
+            <div className="mdc-layout-grid__cell--span-2-desktop">
               &nbsp;
             </div>
 
-            <div class="mdc-layout-grid__cell--span-8">
+            <div className="mdc-layout-grid__cell--span-8">
               <div id="hello__more">
                 <h4>hola mundo • bonjour le monde • hello world</h4>
 
@@ -331,9 +331,9 @@ class AboutMe extends React.Component {
 
         <SkillsInfluences />
 
-        <div class="mdc-layout-grid mdc-layout-grid">
+        <div className="mdc-layout-grid mdc-layout-grid">
           <div
-            class="
+            className="
               hidden--desktop
               mdc-layout-grid__cell--span-12
               mdc-layout-grid__cell--centered
@@ -342,21 +342,21 @@ class AboutMe extends React.Component {
             <a href="/hire">Hire me</a>
           </div>
 
-          <div class="mdc-layout-grid__cell--span-12">
-            <div id="photo-feed" class="mdc-layout-grid__inner"></div>
+          <div className="mdc-layout-grid__cell--span-12">
+            <div id="photo-feed" className="mdc-layout-grid__inner"></div>
           </div>
         </div>
 
-        <div id="lightbox" class="lightbox-close">
-        <div class="lightbox-header">
+        <div id="lightbox" className="lightbox-close">
+        <div className="lightbox-header">
           <div>&nbsp;</div>
           <a id="lightbox-close" href="#">&times;</a>
         </div>
 
-        <div class="lightbox-img">
-          <a class="lightbox-nav prev" href="#">&#x2039;</a>
+        <div className="lightbox-img">
+          <a className="lightbox-nav prev" href="#">&#x2039;</a>
           <img />
-          <a class="lightbox-nav next" href="#">&#x203a;</a>
+          <a className="lightbox-nav next" href="#">&#x203a;</a>
         </div>
       </div>
       </div>

@@ -162,12 +162,12 @@ var FAQ = function (_React$Component2) {
         { key: i },
         React.createElement(
           'dt',
-          { 'class': 'hire-questions__question' },
+          { className: 'hire-questions__question' },
           faq.question
         ),
         React.createElement(
           'dd',
-          { 'class': 'hire-questions__answer' },
+          { className: 'hire-questions__answer' },
           faq.answers.map(function (answer, i) {
             return _this7.renderAnswer(answer, i);
           })
@@ -181,10 +181,10 @@ var FAQ = function (_React$Component2) {
 
       return React.createElement(
         'div',
-        { 'class': 'mdc-layout-grid__cell--span-12' },
+        { className: 'mdc-layout-grid__cell--span-12' },
         React.createElement(
           'dl',
-          { 'class': 'hire-questions' },
+          { className: 'hire-questions' },
           this.state.faqs.map(function (faq, i) {
             return _this8.renderFaq(faq, i);
           })
@@ -216,19 +216,19 @@ var HireMe = function (_React$Component3) {
     value: function render() {
       return React.createElement(
         'div',
-        { 'class': 'mdc-layout-grid' },
+        { className: 'mdc-layout-grid' },
         React.createElement(
           'div',
-          { 'class': 'mdc-layout-grid__inner' },
+          { className: 'mdc-layout-grid__inner' },
           React.createElement(
             'div',
-            { 'class': 'mdc-layout-grid__cell--span-6' },
+            { className: 'mdc-layout-grid__cell--span-6' },
             React.createElement(
               'div',
-              { 'class': 'hire-me' },
+              { className: 'hire-me' },
               React.createElement(
                 'h1',
-                { 'class': 'hire-me__topic' },
+                { className: 'hire-me__topic' },
                 'Web design & development',
                 React.createElement(
                   'small',
@@ -238,7 +238,7 @@ var HireMe = function (_React$Component3) {
               ),
               React.createElement(
                 'h2',
-                { 'class': 'hire-me__rate' },
+                { className: 'hire-me__rate' },
                 '$13,000 USD / month',
                 React.createElement(
                   'small',
@@ -248,12 +248,12 @@ var HireMe = function (_React$Component3) {
               ),
               React.createElement(
                 'p',
-                { 'class': 'hire-me__duration' },
+                { className: 'hire-me__duration' },
                 '6-8 hours a day, Mondays \u2013 Fridays'
               ),
               React.createElement(
                 'p',
-                { 'class': 'hire-me__deliverables' },
+                { className: 'hire-me__deliverables' },
                 React.createElement(
                   'strong',
                   null,
@@ -265,13 +265,13 @@ var HireMe = function (_React$Component3) {
           ),
           React.createElement(
             'div',
-            { 'class': 'mdc-layout-grid__cell--span-6' },
+            { className: 'mdc-layout-grid__cell--span-6' },
             React.createElement(
               'div',
-              { 'class': 'hire-me' },
+              { className: 'hire-me' },
               React.createElement(
                 'h1',
-                { 'class': 'hire-me__topic' },
+                { className: 'hire-me__topic' },
                 'Web design & development',
                 React.createElement(
                   'small',
@@ -281,7 +281,7 @@ var HireMe = function (_React$Component3) {
               ),
               React.createElement(
                 'h2',
-                { 'class': 'hire-me__rate' },
+                { className: 'hire-me__rate' },
                 '$5,000 USD / month',
                 React.createElement(
                   'small',
@@ -291,12 +291,12 @@ var HireMe = function (_React$Component3) {
               ),
               React.createElement(
                 'p',
-                { 'class': 'hire-me__duration' },
+                { className: 'hire-me__duration' },
                 '2-3 hours a day, Mondays \u2013 Fridays'
               ),
               React.createElement(
                 'p',
-                { 'class': 'hire-me__deliverables' },
+                { className: 'hire-me__deliverables' },
                 React.createElement(
                   'strong',
                   null,
@@ -308,13 +308,13 @@ var HireMe = function (_React$Component3) {
           ),
           React.createElement(
             'div',
-            { 'class': 'mdc-layout-grid__cell--span-6' },
+            { className: 'mdc-layout-grid__cell--span-6' },
             React.createElement(
               'div',
-              { 'class': 'hire-me' },
+              { className: 'hire-me' },
               React.createElement(
                 'h1',
-                { 'class': 'hire-me__topic' },
+                { className: 'hire-me__topic' },
                 'Consultation',
                 React.createElement(
                   'small',
@@ -324,12 +324,12 @@ var HireMe = function (_React$Component3) {
               ),
               React.createElement(
                 'h2',
-                { 'class': 'hire-me__rate' },
+                { className: 'hire-me__rate' },
                 '$80 USD / hour'
               ),
               React.createElement(
                 'p',
-                { 'class': 'hire-me__deliverables' },
+                { className: 'hire-me__deliverables' },
                 React.createElement(
                   'strong',
                   null,
@@ -341,13 +341,13 @@ var HireMe = function (_React$Component3) {
           ),
           React.createElement(
             'div',
-            { 'class': 'mdc-layout-grid__cell--span-6' },
+            { className: 'mdc-layout-grid__cell--span-6' },
             React.createElement(
               'div',
-              { 'class': 'hire-me' },
+              { className: 'hire-me' },
               React.createElement(
                 'h1',
-                { 'class': 'hire-me__topic' },
+                { className: 'hire-me__topic' },
                 'Consultation',
                 React.createElement(
                   'small',
@@ -357,12 +357,12 @@ var HireMe = function (_React$Component3) {
               ),
               React.createElement(
                 'h2',
-                { 'class': 'hire-me__rate' },
+                { className: 'hire-me__rate' },
                 '$150 USD / hour'
               ),
               React.createElement(
                 'p',
-                { 'class': 'hire-me__deliverables' },
+                { className: 'hire-me__deliverables' },
                 React.createElement(
                   'strong',
                   null,
@@ -375,7 +375,7 @@ var HireMe = function (_React$Component3) {
           React.createElement(
             'div',
             {
-              'class': ' mdc-layout-grid__cell--span-12 mdc-layout-grid__cell--centered '
+              className: ' mdc-layout-grid__cell--span-12 mdc-layout-grid__cell--centered '
             },
             React.createElement(
               'p',
@@ -387,7 +387,7 @@ var HireMe = function (_React$Component3) {
               null,
               React.createElement(
                 'a',
-                { 'class': 'email', href: '#' },
+                { className: 'email', href: '#' },
                 'Email me to get started'
               )
             )
@@ -395,7 +395,7 @@ var HireMe = function (_React$Component3) {
           React.createElement(
             'div',
             {
-              'class': ' hidden--desktop mdc-layout-grid__cell--span-12 mdc-layout-grid__cell--centered '
+              className: ' hidden--desktop mdc-layout-grid__cell--span-12 mdc-layout-grid__cell--centered '
             },
             React.createElement(
               'a',
@@ -435,18 +435,18 @@ var AboutMe = function (_React$Component4) {
         null,
         React.createElement(
           'div',
-          { 'class': 'mdc-layout-grid' },
+          { className: 'mdc-layout-grid' },
           React.createElement(
             'div',
-            { 'class': 'mdc-layout-grid__inner' },
+            { className: 'mdc-layout-grid__inner' },
             React.createElement(
               'div',
-              { 'class': 'mdc-layout-grid__cell--span-2-desktop' },
+              { className: 'mdc-layout-grid__cell--span-2-desktop' },
               '\xA0'
             ),
             React.createElement(
               'div',
-              { 'class': 'mdc-layout-grid__cell--span-8' },
+              { className: 'mdc-layout-grid__cell--span-8' },
               React.createElement(
                 'div',
                 { id: 'hello__more' },
@@ -484,11 +484,11 @@ var AboutMe = function (_React$Component4) {
         React.createElement(SkillsInfluences, null),
         React.createElement(
           'div',
-          { 'class': 'mdc-layout-grid mdc-layout-grid' },
+          { className: 'mdc-layout-grid mdc-layout-grid' },
           React.createElement(
             'div',
             {
-              'class': ' hidden--desktop mdc-layout-grid__cell--span-12 mdc-layout-grid__cell--centered '
+              className: ' hidden--desktop mdc-layout-grid__cell--span-12 mdc-layout-grid__cell--centered '
             },
             React.createElement(
               'a',
@@ -498,16 +498,16 @@ var AboutMe = function (_React$Component4) {
           ),
           React.createElement(
             'div',
-            { 'class': 'mdc-layout-grid__cell--span-12' },
-            React.createElement('div', { id: 'photo-feed', 'class': 'mdc-layout-grid__inner' })
+            { className: 'mdc-layout-grid__cell--span-12' },
+            React.createElement('div', { id: 'photo-feed', className: 'mdc-layout-grid__inner' })
           )
         ),
         React.createElement(
           'div',
-          { id: 'lightbox', 'class': 'lightbox-close' },
+          { id: 'lightbox', className: 'lightbox-close' },
           React.createElement(
             'div',
-            { 'class': 'lightbox-header' },
+            { className: 'lightbox-header' },
             React.createElement(
               'div',
               null,
@@ -521,16 +521,16 @@ var AboutMe = function (_React$Component4) {
           ),
           React.createElement(
             'div',
-            { 'class': 'lightbox-img' },
+            { className: 'lightbox-img' },
             React.createElement(
               'a',
-              { 'class': 'lightbox-nav prev', href: '#' },
+              { className: 'lightbox-nav prev', href: '#' },
               '\u2039'
             ),
             React.createElement('img', null),
             React.createElement(
               'a',
-              { 'class': 'lightbox-nav next', href: '#' },
+              { className: 'lightbox-nav next', href: '#' },
               '\u203A'
             )
           )
