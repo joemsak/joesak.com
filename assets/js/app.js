@@ -632,7 +632,7 @@ var ScrollToTop = function (_React$Component6) {
   _createClass(ScrollToTop, [{
     key: 'componentDidUpdate',
     value: function componentDidUpdate(prevProps) {
-      window.scrollTo(0, 0);
+      if (this.props.location !== prevProps.location) window.scrollTo(0, 0);
     }
   }, {
     key: 'render',
@@ -643,6 +643,8 @@ var ScrollToTop = function (_React$Component6) {
 
   return ScrollToTop;
 }(React.Component);
+
+ScrollToTop = ReactRouter.withRouter(ScrollToTop);
 
 var Router = ReactRouter.HashRouter;
 

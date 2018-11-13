@@ -391,13 +391,16 @@ class App extends React.Component {
 
 class ScrollToTop extends React.Component {
   componentDidUpdate(prevProps) {
-    window.scrollTo(0, 0)
+    if (this.props.location !== prevProps.location)
+      window.scrollTo(0, 0)
   }
 
   render() {
     return this.props.children
   }
 }
+
+ScrollToTop = ReactRouter.withRouter(ScrollToTop)
 
 const Router = ReactRouter.HashRouter
 
