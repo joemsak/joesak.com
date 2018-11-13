@@ -245,12 +245,7 @@ class HireMe extends React.Component {
             </div>
           </div>
 
-          <div
-            className="
-              mdc-layout-grid__cell--span-12
-              mdc-layout-grid__cell--centered
-            "
-          >
+          <div className="mdc-layout-grid__cell--span-12 mdc-layout-grid__cell--centered">
             <p>Specific deliverables to be outlined in contract.</p>
             <p>
               <a className="email" href="#">
@@ -259,13 +254,7 @@ class HireMe extends React.Component {
             </p>
           </div>
 
-          <div
-            className="
-              hidden--desktop
-              mdc-layout-grid__cell--span-12
-              mdc-layout-grid__cell--centered
-            "
-          >
+          <div className="hidden--desktop mdc-layout-grid__cell--span-12 mdc-layout-grid__cell--centered">
             <a href="/">About me</a>
           </div>
 
@@ -332,13 +321,7 @@ class AboutMe extends React.Component {
         <SkillsInfluences />
 
         <div className="mdc-layout-grid mdc-layout-grid">
-          <div
-            className="
-              hidden--desktop
-              mdc-layout-grid__cell--span-12
-              mdc-layout-grid__cell--centered
-            "
-          >
+          <div className="hidden--desktop mdc-layout-grid__cell--span-12 mdc-layout-grid__cell--centered">
             <a href="/hire">Hire me</a>
           </div>
 

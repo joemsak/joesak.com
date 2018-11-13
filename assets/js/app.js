@@ -374,9 +374,7 @@ var HireMe = function (_React$Component3) {
           ),
           React.createElement(
             'div',
-            {
-              className: ' mdc-layout-grid__cell--span-12 mdc-layout-grid__cell--centered '
-            },
+            { className: 'mdc-layout-grid__cell--span-12 mdc-layout-grid__cell--centered' },
             React.createElement(
               'p',
               null,
@@ -394,9 +392,7 @@ var HireMe = function (_React$Component3) {
           ),
           React.createElement(
             'div',
-            {
-              className: ' hidden--desktop mdc-layout-grid__cell--span-12 mdc-layout-grid__cell--centered '
-            },
+            { className: 'hidden--desktop mdc-layout-grid__cell--span-12 mdc-layout-grid__cell--centered' },
             React.createElement(
               'a',
               { href: '/' },
@@ -487,9 +483,7 @@ var AboutMe = function (_React$Component4) {
           { className: 'mdc-layout-grid mdc-layout-grid' },
           React.createElement(
             'div',
-            {
-              className: ' hidden--desktop mdc-layout-grid__cell--span-12 mdc-layout-grid__cell--centered '
-            },
+            { className: 'hidden--desktop mdc-layout-grid__cell--span-12 mdc-layout-grid__cell--centered' },
             React.createElement(
               'a',
               { href: '/hire' },
