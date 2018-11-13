@@ -377,12 +377,14 @@ class App extends React.Component {
         <Route path="/hire" component={HireMe} />
 
         <footer id="site-footer">
-          This github pages site was made in VS Code with
-          HTML5, CSS3, ES6, and React by Joseph M. Sak
-          <span>&#128248;</span>
-          <a href="https://github.com/joemsak/joemsak.github.io">
-            Open the source of this site
-          </a>
+          <p>
+            This github pages site was made in VS Code with
+            HTML5, CSS3, ES6, and React by Joseph M. Sak
+            <span><i>&#128247;</i><i>&#128248;</i></span>
+            <a href="https://github.com/joemsak/joemsak.github.io">
+              Open the source of this site
+            </a>
+          </p>
         </footer>
       </div>
     )

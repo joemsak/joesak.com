@@ -601,16 +601,29 @@ var App = function (_React$Component5) {
         React.createElement(
           'footer',
           { id: 'site-footer' },
-          'This github pages site was made in VS Code with HTML5, CSS3, ES6, and React by Joseph M. Sak',
           React.createElement(
-            'span',
+            'p',
             null,
-            '\uD83D\uDCF8'
-          ),
-          React.createElement(
-            'a',
-            { href: 'https://github.com/joemsak/joemsak.github.io' },
-            'Open the source of this site'
+            'This github pages site was made in VS Code with HTML5, CSS3, ES6, and React by Joseph M. Sak',
+            React.createElement(
+              'span',
+              null,
+              React.createElement(
+                'i',
+                null,
+                '\uD83D\uDCF7'
+              ),
+              React.createElement(
+                'i',
+                null,
+                '\uD83D\uDCF8'
+              )
+            ),
+            React.createElement(
+              'a',
+              { href: 'https://github.com/joemsak/joemsak.github.io' },
+              'Open the source of this site'
+            )
           )
         )
       );
