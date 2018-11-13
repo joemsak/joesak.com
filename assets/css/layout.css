@@ -32,6 +32,7 @@
 
 #site-footer span:hover {
   transform: scale(1.5);
+  cursor: none;
 }
 
 #site-footer span i:last-child {
