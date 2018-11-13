@@ -1,80 +1,127 @@
-'use strict'
+'use strict';
 
-class Index extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Index = function (_React$Component) {
+  _inherits(Index, _React$Component);
+
+  function Index(props) {
+    _classCallCheck(this, Index);
+
+    var _this = _possibleConstructorReturn(this, (Index.__proto__ || Object.getPrototypeOf(Index)).call(this, props));
+
+    _this.state = {
       skills: [],
-      influences: [],
+      influences: []
+    };
+    return _this;
+  }
+
+  _createClass(Index, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      fetch('/assets/js/skills.js').then(function (resp) {
+        return resp.json();
+      }).then(function (json) {
+        return _this2.setState({ skills: json });
+      });
+
+      fetch('/assets/js/influences.js').then(function (resp) {
+        return resp.json();
+      }).then(function (json) {
+        return _this2.setState({ influences: json });
+      });
     }
-  }
-
-  componentDidMount () {
-    fetch('/assets/js/skills.js')
-      .then(resp => resp.json())
-      .then(json => this.setState({ skills: json }))
-
-    fetch('/assets/js/influences.js')
-      .then(resp => resp.json())
-      .then(json => this.setState({ influences: json }))
-  }
-
-  renderItem (item, idx) {
-    return (
-      <li key={idx} className="mdc-list-item">{ item }</li>
-    )
-  }
-
-  renderGroup (items, idx) {
-    return (
-      <div key={idx} className="mdc-layout-grid__cell--span-3">
-        <ul className="mdc-list">
-          {items.map((item, i) => this.renderItem(item, i))}
-        </ul>
-      </div>
-    )
-  }
-
-  renderSkills () {
-    this.renderItems(this.state.skills)
-  }
-
-  renderItems (items) {
-    let chunks = []
-
-    for (let i = 0; i < items.length; i++) {
-      chunks.push(items.slice(i, i += 4));
+  }, {
+    key: 'renderItem',
+    value: function renderItem(item, idx) {
+      return React.createElement(
+        'li',
+        { key: idx, className: 'mdc-list-item' },
+        item
+      );
     }
+  }, {
+    key: 'renderGroup',
+    value: function renderGroup(items, idx) {
+      var _this3 = this;
 
-    return (
-      <div className="mdc-layout-grid__inner">
-        {chunks.map((items, i) => this.renderGroup(items, i))}
-      </div>
-    )
-  }
+      return React.createElement(
+        'div',
+        { key: idx, className: 'mdc-layout-grid__cell--span-3' },
+        React.createElement(
+          'ul',
+          { className: 'mdc-list' },
+          items.map(function (item, i) {
+            return _this3.renderItem(item, i);
+          })
+        )
+      );
+    }
+  }, {
+    key: 'renderSkills',
+    value: function renderSkills() {
+      this.renderItems(this.state.skills);
+    }
+  }, {
+    key: 'renderItems',
+    value: function renderItems(items) {
+      var _this4 = this;
 
-  render() {
-    return(
-      <div className="mdc-layout-grid__inner">
-        <div className="mdc-layout-grid__cell--span-12">
-          <h2 className="heading--section-title">
-            Skills
-          </h2>
+      var chunks = [];
 
-          {this.renderItems(this.state.skills)}
-        </div>
+      for (var i = 0; i < items.length; i++) {
+        chunks.push(items.slice(i, i += 4));
+      }
 
-        <div className="mdc-layout-grid__cell--span-12">
-          <h2 className="heading--section-title">
-            Influences
-          </h2>
+      return React.createElement(
+        'div',
+        { className: 'mdc-layout-grid__inner' },
+        chunks.map(function (items, i) {
+          return _this4.renderGroup(items, i);
+        })
+      );
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      return React.createElement(
+        'div',
+        { className: 'mdc-layout-grid__inner' },
+        React.createElement(
+          'div',
+          { className: 'mdc-layout-grid__cell--span-12' },
+          React.createElement(
+            'h2',
+            { className: 'heading--section-title' },
+            'Skills'
+          ),
+          this.renderItems(this.state.skills)
+        ),
+        React.createElement(
+          'div',
+          { className: 'mdc-layout-grid__cell--span-12' },
+          React.createElement(
+            'h2',
+            { className: 'heading--section-title' },
+            'Influences'
+          ),
+          this.renderItems(this.state.influences)
+        )
+      );
+    }
+  }]);
 
-          {this.renderItems(this.state.influences)}
-        </div>
-      </div>
-    )
-  }
-}
+  return Index;
+}(React.Component);
 
-var appEl = document.querySelector('#index-app')
-ReactDOM.render(<Index />, appEl)
+var appEl = document.querySelector('#index-app');
+ReactDOM.render(React.createElement(Index, null), appEl);
