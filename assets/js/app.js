@@ -67,11 +67,6 @@ var SkillsInfluences = function (_React$Component) {
       );
     }
   }, {
-    key: 'renderSkills',
-    value: function renderSkills() {
-      this.renderItems(this.state.skills);
-    }
-  }, {
     key: 'renderItems',
     value: function renderItems(items) {
       var _this4 = this;

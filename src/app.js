@@ -35,10 +35,6 @@ class SkillsInfluences extends React.Component {
     )
   }
 
-  renderSkills () {
-    this.renderItems(this.state.skills)
-  }
-
   renderItems (items) {
     let chunks = []
 
