@@ -1,4 +1,4 @@
-(function() {
+document.addEventListener('AboutMe:Ready', function () {
   var lightbox = {
     lightboxContainer: document.getElementById("lightbox"),
 
@@ -174,4 +174,4 @@
       });
     }
   );
-})();
+}, false);
