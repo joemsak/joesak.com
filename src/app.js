@@ -255,7 +255,7 @@ class HireMe extends React.Component {
           </div>
 
           <div className="hidden--desktop mdc-layout-grid__cell--span-12 mdc-layout-grid__cell--centered">
-            <a href="/">About me</a>
+            <Link to="/">About me</Link>
           </div>
 
 
@@ -322,7 +322,7 @@ class AboutMe extends React.Component {
 
         <div className="mdc-layout-grid mdc-layout-grid">
           <div className="hidden--desktop mdc-layout-grid__cell--span-12 mdc-layout-grid__cell--centered">
-            <a href="/hire">Hire me</a>
+            <p><Link to="/hire">Hire me</Link></p>
           </div>
 
           <div className="mdc-layout-grid__cell--span-12">
@@ -389,11 +389,23 @@ class App extends React.Component {
   }
 }
 
+class ScrollToTop extends React.Component {
+  componentDidUpdate(prevProps) {
+    window.scrollTo(0, 0)
+  }
+
+  render() {
+    return this.props.children
+  }
+}
+
 const Router = ReactRouter.HashRouter
 
 ReactDOM.render(
   <Router>
-    <App />
+    <ScrollToTop>
+      <App />
+    </ScrollToTop>
   </Router>,
   document.getElementById('app')
 )

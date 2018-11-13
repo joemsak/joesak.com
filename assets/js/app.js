@@ -394,8 +394,8 @@ var HireMe = function (_React$Component3) {
             'div',
             { className: 'hidden--desktop mdc-layout-grid__cell--span-12 mdc-layout-grid__cell--centered' },
             React.createElement(
-              'a',
-              { href: '/' },
+              Link,
+              { to: '/' },
               'About me'
             )
           ),
@@ -485,9 +485,13 @@ var AboutMe = function (_React$Component4) {
             'div',
             { className: 'hidden--desktop mdc-layout-grid__cell--span-12 mdc-layout-grid__cell--centered' },
             React.createElement(
-              'a',
-              { href: '/hire' },
-              'Hire me'
+              'p',
+              null,
+              React.createElement(
+                Link,
+                { to: '/hire' },
+                'Hire me'
+              )
             )
           ),
           React.createElement(
@@ -616,10 +620,38 @@ var App = function (_React$Component5) {
   return App;
 }(React.Component);
 
+var ScrollToTop = function (_React$Component6) {
+  _inherits(ScrollToTop, _React$Component6);
+
+  function ScrollToTop() {
+    _classCallCheck(this, ScrollToTop);
+
+    return _possibleConstructorReturn(this, (ScrollToTop.__proto__ || Object.getPrototypeOf(ScrollToTop)).apply(this, arguments));
+  }
+
+  _createClass(ScrollToTop, [{
+    key: 'componentDidUpdate',
+    value: function componentDidUpdate(prevProps) {
+      window.scrollTo(0, 0);
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      return this.props.children;
+    }
+  }]);
+
+  return ScrollToTop;
+}(React.Component);
+
 var Router = ReactRouter.HashRouter;
 
 ReactDOM.render(React.createElement(
   Router,
   null,
-  React.createElement(App, null)
+  React.createElement(
+    ScrollToTop,
+    null,
+    React.createElement(App, null)
+  )
 ), document.getElementById('app'));
