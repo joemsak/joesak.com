@@ -275,6 +275,7 @@ var App = function (_React$Component3) {
             'Photographer'
           )
         ),
+        React.createElement(Route, { path: '/', exact: true, component: AboutMe }),
         React.createElement(
           'footer',
           { id: 'site-footer' },

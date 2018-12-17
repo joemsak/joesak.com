@@ -165,6 +165,8 @@ class App extends React.Component {
           <h2>Photographer</h2>
         </div>
 
+        <Route path="/" exact component={AboutMe} />
+
         <footer id="site-footer">
           <p>
             This github pages site was made in VS Code with
