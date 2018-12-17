@@ -118,298 +118,8 @@ var SkillsInfluences = function (_React$Component) {
   return SkillsInfluences;
 }(React.Component);
 
-var FAQ = function (_React$Component2) {
-  _inherits(FAQ, _React$Component2);
-
-  function FAQ(props) {
-    _classCallCheck(this, FAQ);
-
-    var _this5 = _possibleConstructorReturn(this, (FAQ.__proto__ || Object.getPrototypeOf(FAQ)).call(this, props));
-
-    _this5.state = {
-      faqs: []
-    };
-    return _this5;
-  }
-
-  _createClass(FAQ, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      var _this6 = this;
-
-      fetch('/data/faqs.js').then(function (resp) {
-        return resp.json();
-      }).then(function (json) {
-        return _this6.setState({ faqs: json });
-      });
-    }
-  }, {
-    key: 'renderAnswer',
-    value: function renderAnswer(answer, i) {
-      return React.createElement(
-        'p',
-        { key: i },
-        answer
-      );
-    }
-  }, {
-    key: 'renderFaq',
-    value: function renderFaq(faq, i) {
-      var _this7 = this;
-
-      return React.createElement(
-        'div',
-        { key: i },
-        React.createElement(
-          'dt',
-          { className: 'hire-questions__question' },
-          faq.question
-        ),
-        React.createElement(
-          'dd',
-          { className: 'hire-questions__answer' },
-          faq.answers.map(function (answer, i) {
-            return _this7.renderAnswer(answer, i);
-          })
-        )
-      );
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var _this8 = this;
-
-      return React.createElement(
-        'div',
-        { className: 'mdc-layout-grid__cell--span-12' },
-        React.createElement(
-          'dl',
-          { className: 'hire-questions' },
-          this.state.faqs.map(function (faq, i) {
-            return _this8.renderFaq(faq, i);
-          })
-        )
-      );
-    }
-  }]);
-
-  return FAQ;
-}(React.Component);
-
-var HireMe = function (_React$Component3) {
-  _inherits(HireMe, _React$Component3);
-
-  function HireMe() {
-    _classCallCheck(this, HireMe);
-
-    return _possibleConstructorReturn(this, (HireMe.__proto__ || Object.getPrototypeOf(HireMe)).apply(this, arguments));
-  }
-
-  _createClass(HireMe, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      // email.js needs custom Event
-      document.dispatchEvent(new Event('HireMe:Ready'));
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      return React.createElement(
-        'div',
-        { className: 'mdc-layout-grid' },
-        React.createElement(
-          'div',
-          { className: 'mdc-layout-grid__inner' },
-          React.createElement(
-            'div',
-            { className: 'mdc-layout-grid__cell--span-6' },
-            React.createElement(
-              'div',
-              { className: 'hire-me' },
-              React.createElement(
-                'h1',
-                { className: 'hire-me__topic' },
-                'Web design & development',
-                React.createElement(
-                  'small',
-                  null,
-                  '(business hours)'
-                )
-              ),
-              React.createElement(
-                'h2',
-                { className: 'hire-me__rate' },
-                '$13,000 USD / month',
-                React.createElement(
-                  'small',
-                  null,
-                  'Half due up front, the rest at month\'s end'
-                )
-              ),
-              React.createElement(
-                'p',
-                { className: 'hire-me__duration' },
-                '6-8 hours a day, Mondays \u2013 Fridays'
-              ),
-              React.createElement(
-                'p',
-                { className: 'hire-me__deliverables' },
-                React.createElement(
-                  'strong',
-                  null,
-                  'Services include, but are not limited to:'
-                ),
-                'ruby \u2022 ruby on rails \u2022 html \u2022 css \u2022 javascript \u2022 UI/UX design \u2022 refactoring \u2022 IT administration'
-              )
-            )
-          ),
-          React.createElement(
-            'div',
-            { className: 'mdc-layout-grid__cell--span-6' },
-            React.createElement(
-              'div',
-              { className: 'hire-me' },
-              React.createElement(
-                'h1',
-                { className: 'hire-me__topic' },
-                'Web design & development',
-                React.createElement(
-                  'small',
-                  null,
-                  '(outside of business hours)'
-                )
-              ),
-              React.createElement(
-                'h2',
-                { className: 'hire-me__rate' },
-                '$5,000 USD / month',
-                React.createElement(
-                  'small',
-                  null,
-                  'Half due up front, the rest at month\'s end'
-                )
-              ),
-              React.createElement(
-                'p',
-                { className: 'hire-me__duration' },
-                '2-3 hours a day, Mondays \u2013 Fridays'
-              ),
-              React.createElement(
-                'p',
-                { className: 'hire-me__deliverables' },
-                React.createElement(
-                  'strong',
-                  null,
-                  'Services include, but are not limited to:'
-                ),
-                'ruby \u2022 ruby on rails \u2022 html \u2022 css \u2022 javascript \u2022 UI/UX design \u2022 refactoring \u2022 IT administration'
-              )
-            )
-          ),
-          React.createElement(
-            'div',
-            { className: 'mdc-layout-grid__cell--span-6' },
-            React.createElement(
-              'div',
-              { className: 'hire-me' },
-              React.createElement(
-                'h1',
-                { className: 'hire-me__topic' },
-                'Consultation',
-                React.createElement(
-                  'small',
-                  null,
-                  '(business hours)'
-                )
-              ),
-              React.createElement(
-                'h2',
-                { className: 'hire-me__rate' },
-                '$80 USD / hour'
-              ),
-              React.createElement(
-                'p',
-                { className: 'hire-me__deliverables' },
-                React.createElement(
-                  'strong',
-                  null,
-                  'Services include, but are not limited to:'
-                ),
-                'pairing \u2022 mentoring \u2022 refactoring \u2022 testing \u2022 IT administration'
-              )
-            )
-          ),
-          React.createElement(
-            'div',
-            { className: 'mdc-layout-grid__cell--span-6' },
-            React.createElement(
-              'div',
-              { className: 'hire-me' },
-              React.createElement(
-                'h1',
-                { className: 'hire-me__topic' },
-                'Consultation',
-                React.createElement(
-                  'small',
-                  null,
-                  '(outside of business hours)'
-                )
-              ),
-              React.createElement(
-                'h2',
-                { className: 'hire-me__rate' },
-                '$150 USD / hour'
-              ),
-              React.createElement(
-                'p',
-                { className: 'hire-me__deliverables' },
-                React.createElement(
-                  'strong',
-                  null,
-                  'Services include, but are not limited to:'
-                ),
-                'pairing \u2022 mentoring \u2022 refactoring \u2022 testing \u2022 IT administration'
-              )
-            )
-          ),
-          React.createElement(
-            'div',
-            { className: 'mdc-layout-grid__cell--span-12 mdc-layout-grid__cell--centered' },
-            React.createElement(
-              'p',
-              null,
-              'Specific deliverables to be outlined in contract.'
-            ),
-            React.createElement(
-              'p',
-              null,
-              React.createElement(
-                'a',
-                { className: 'email', href: '#' },
-                'Email me to get started'
-              )
-            )
-          ),
-          React.createElement(
-            'div',
-            { className: 'hidden--desktop mdc-layout-grid__cell--span-12 mdc-layout-grid__cell--centered' },
-            React.createElement(
-              Link,
-              { to: '/' },
-              'About me'
-            )
-          ),
-          React.createElement(FAQ, null)
-        )
-      );
-    }
-  }]);
-
-  return HireMe;
-}(React.Component);
-
-var AboutMe = function (_React$Component4) {
-  _inherits(AboutMe, _React$Component4);
+var AboutMe = function (_React$Component2) {
+  _inherits(AboutMe, _React$Component2);
 
   function AboutMe() {
     _classCallCheck(this, AboutMe);
@@ -483,19 +193,6 @@ var AboutMe = function (_React$Component4) {
           { className: 'mdc-layout-grid mdc-layout-grid' },
           React.createElement(
             'div',
-            { className: 'hidden--desktop mdc-layout-grid__cell--span-12 mdc-layout-grid__cell--centered' },
-            React.createElement(
-              'p',
-              null,
-              React.createElement(
-                Link,
-                { to: '/hire' },
-                'Hire me'
-              )
-            )
-          ),
-          React.createElement(
-            'div',
             { className: 'mdc-layout-grid__cell--span-12' },
             React.createElement('div', { id: 'photo-feed', className: 'mdc-layout-grid__inner' })
           )
@@ -544,8 +241,8 @@ var ReactRouter = window.ReactRouterDOM;
 var Route = ReactRouter.Route;
 var Link = ReactRouter.Link;
 
-var App = function (_React$Component5) {
-  _inherits(App, _React$Component5);
+var App = function (_React$Component3) {
+  _inherits(App, _React$Component3);
 
   function App() {
     _classCallCheck(this, App);
@@ -554,23 +251,6 @@ var App = function (_React$Component5) {
   }
 
   _createClass(App, [{
-    key: 'renderNavigation',
-    value: function renderNavigation() {
-      if (window.location.hash == "#/hire") {
-        return React.createElement(
-          Link,
-          { to: '/' },
-          'About me'
-        );
-      } else {
-        return React.createElement(
-          Link,
-          { to: '/hire' },
-          'Hire me'
-        );
-      }
-    }
-  }, {
     key: 'render',
     value: function render() {
       return React.createElement(
@@ -593,11 +273,8 @@ var App = function (_React$Component5) {
             'h2',
             null,
             'Photographer'
-          ),
-          this.renderNavigation()
+          )
         ),
-        React.createElement(Route, { path: '/', exact: true, component: AboutMe }),
-        React.createElement(Route, { path: '/hire', component: HireMe }),
         React.createElement(
           'footer',
           { id: 'site-footer' },
@@ -633,8 +310,8 @@ var App = function (_React$Component5) {
   return App;
 }(React.Component);
 
-var ScrollToTop = function (_React$Component6) {
-  _inherits(ScrollToTop, _React$Component6);
+var ScrollToTop = function (_React$Component4) {
+  _inherits(ScrollToTop, _React$Component4);
 
   function ScrollToTop() {
     _classCallCheck(this, ScrollToTop);
