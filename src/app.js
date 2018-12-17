@@ -72,200 +72,6 @@ class SkillsInfluences extends React.Component {
   }
 }
 
-class FAQ extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      faqs: []
-    }
-  }
-
-  componentDidMount () {
-    fetch('/data/faqs.js')
-      .then(resp => resp.json())
-      .then(json => this.setState({ faqs: json }))
-  }
-
-  renderAnswer (answer, i) {
-    return <p key={i}>{answer}</p>
-  }
-
-  renderFaq (faq, i) {
-    return(
-      <div key={i}>
-        <dt className="hire-questions__question">
-          {faq.question}
-        </dt>
-
-        <dd className="hire-questions__answer">
-          {faq.answers.map((answer, i) => this.renderAnswer(answer, i))}
-        </dd>
-      </div>
-    )
-  }
-
-  render () {
-    return(
-      <div className="mdc-layout-grid__cell--span-12">
-        <dl className="hire-questions">
-          {this.state.faqs.map((faq, i) => this.renderFaq(faq, i))}
-        </dl>
-      </div>
-    )
-  }
-}
-
-class HireMe extends React.Component {
-  componentDidMount () {
-    // email.js needs custom Event
-    document.dispatchEvent(new Event('HireMe:Ready'))
-  }
-
-  render() {
-    return(
-      <div className="mdc-layout-grid">
-        <div className="mdc-layout-grid__inner">
-          <div className="mdc-layout-grid__cell--span-6">
-            <div className="hire-me">
-              <h1 className="hire-me__topic">
-                Web design &amp; development
-                <small>(business hours)</small>
-              </h1>
-
-              <h2 className="hire-me__rate">
-                $13,000 USD / month
-                <small>
-                  Half due up front, the rest at month&apos;s end
-                </small>
-              </h2>
-
-              <p className="hire-me__duration">
-                6-8 hours a day, Mondays – Fridays
-              </p>
-
-              <p className="hire-me__deliverables">
-                <strong>
-                  Services include, but are not limited to:
-                </strong>
-
-                ruby •
-                ruby on rails •
-                html •
-                css •
-                javascript •
-                UI/UX design •
-                refactoring •
-                IT administration
-              </p>
-            </div>
-          </div>
-
-          <div className="mdc-layout-grid__cell--span-6">
-            <div className="hire-me">
-              <h1 className="hire-me__topic">
-                Web design &amp; development
-                <small>(outside of business hours)</small>
-              </h1>
-
-              <h2 className="hire-me__rate">
-                $5,000 USD / month
-                <small>
-                  Half due up front, the rest at month&apos;s end
-                </small>
-              </h2>
-
-              <p className="hire-me__duration">
-                2-3 hours a day, Mondays – Fridays
-              </p>
-
-              <p className="hire-me__deliverables">
-                <strong>
-                  Services include, but are not limited to:
-                </strong>
-
-                ruby •
-                ruby on rails •
-                html •
-                css •
-                javascript •
-                UI/UX design •
-                refactoring •
-                IT administration
-              </p>
-            </div>
-          </div>
-
-          <div className="mdc-layout-grid__cell--span-6">
-            <div className="hire-me">
-              <h1 className="hire-me__topic">
-                Consultation
-                <small>(business hours)</small>
-              </h1>
-
-              <h2 className="hire-me__rate">
-                $80 USD / hour
-              </h2>
-
-              <p className="hire-me__deliverables">
-                <strong>
-                  Services include, but are not limited to:
-                </strong>
-
-                pairing •
-                mentoring •
-                refactoring •
-                testing •
-                IT administration
-              </p>
-            </div>
-          </div>
-
-          <div className="mdc-layout-grid__cell--span-6">
-            <div className="hire-me">
-              <h1 className="hire-me__topic">
-                Consultation
-                <small>(outside of business hours)</small>
-              </h1>
-
-              <h2 className="hire-me__rate">
-                $150 USD / hour
-              </h2>
-
-              <p className="hire-me__deliverables">
-                <strong>
-                  Services include, but are not limited to:
-                </strong>
-
-                pairing •
-                mentoring •
-                refactoring •
-                testing •
-                IT administration
-              </p>
-            </div>
-          </div>
-
-          <div className="mdc-layout-grid__cell--span-12 mdc-layout-grid__cell--centered">
-            <p>Specific deliverables to be outlined in contract.</p>
-            <p>
-              <a className="email" href="#">
-                Email me to get started
-              </a>
-            </p>
-          </div>
-
-          <div className="hidden--desktop mdc-layout-grid__cell--span-12 mdc-layout-grid__cell--centered">
-            <Link to="/">About me</Link>
-          </div>
-
-
-          <FAQ />
-        </div>
-      </div>
-    );
-  }
-}
-
 class AboutMe extends React.Component {
   componentDidMount () {
     // legacy photo-feed.js needs a custom Event
@@ -321,10 +127,6 @@ class AboutMe extends React.Component {
         <SkillsInfluences />
 
         <div className="mdc-layout-grid mdc-layout-grid">
-          <div className="hidden--desktop mdc-layout-grid__cell--span-12 mdc-layout-grid__cell--centered">
-            <p><Link to="/hire">Hire me</Link></p>
-          </div>
-
           <div className="mdc-layout-grid__cell--span-12">
             <div id="photo-feed" className="mdc-layout-grid__inner"></div>
           </div>
@@ -352,14 +154,6 @@ const Route = ReactRouter.Route
 const Link = ReactRouter.Link
 
 class App extends React.Component {
-  renderNavigation () {
-    if (window.location.hash == "#/hire") {
-      return <Link to="/">About me</Link>
-    } else {
-      return <Link to="/hire">Hire me</Link>
-    }
-  }
-
   render () {
     return(
       <div>
@@ -369,12 +163,7 @@ class App extends React.Component {
           <h2>Full–Stack Developer</h2>
 
           <h2>Photographer</h2>
-
-          {this.renderNavigation()}
         </div>
-
-        <Route path="/" exact component={AboutMe} />
-        <Route path="/hire" component={HireMe} />
 
         <footer id="site-footer">
           <p>
