@@ -63,7 +63,7 @@
         <span class="section-note">Have Dabbled / Practiced</span>
 
         <ul>
-          <li>Exlixir</li>
+          <li>Elixir</li>
           <li>Clojure</li>
           <li>Python</li>
           <li>Go</li>
@@ -306,36 +306,6 @@ header {
   }
 }
 
-@media(max-width: 900px) {
-  #greeting div {
-    width: 90%;
-  }
-}
-
-@media(max-width: 920px) {
-  #greeting div {
-    h1 {
-      font-size: 4rem;
-    }
-  }
-}
-
-@media(max-width: 600px) {
-  #greeting div {
-    h1 {
-      font-size: 4rem;
-    }
-
-    h2 {
-      font-size: 2rem;
-    }
-
-    h3 {
-      font-size: 1rem;
-    }
-  }
-}
-
 section {
   min-height: 100vh;
   position: -webkit-sticky;
@@ -407,5 +377,59 @@ section {
   background: white;
   box-shadow: 0 -0.2rem 1rem 0.2rem rgba(255, 255, 255, 0.2);
   color: #333;
+}
+
+@media(max-width: 900px) {
+  #greeting div {
+    width: 90%;
+  }
+
+  section div {
+    main {
+      width: 100%;
+    }
+
+    ul,
+    h2,
+    span:not(.section-note) {
+      width: 33%;
+    }
+  }
+}
+
+@media(max-width: 920px) {
+  #greeting div {
+    h1 {
+      font-size: 4rem;
+    }
+  }
+
+  section div {
+    flex-wrap: wrap;
+  }
+}
+
+@media(max-width: 600px) {
+  #greeting div {
+    h1 {
+      font-size: 4rem;
+    }
+
+    h2 {
+      font-size: 2rem;
+    }
+
+    h3 {
+      font-size: 1rem;
+    }
+  }
+
+  section div {
+    ul,
+    h2,
+    span:not(.section-note) {
+      width: 50%;
+    }
+  }
 }
 </style>
