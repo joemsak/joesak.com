@@ -210,6 +210,7 @@
           <li>Art Chicago and Next Art Fair</li>
           <li>Best Buy App Discovery Center</li>
           <li>Restaurant Intelligence Agency</li>
+          <li>...and more</li>
         </ul>
       </div>
 
@@ -240,6 +241,7 @@
           <li>GM Renaissance Conference Center</li>
           <li>Oldsmobile Park</li>
           <li>Lansing Center</li>
+          <li>...and more</li>
         </ul>
       </div>
     </section>
