@@ -375,7 +375,7 @@ section {
 
 .background--white {
   background: white;
-  box-shadow: 0 -0.2rem 1rem 0.2rem rgba(255, 255, 255, 0.2);
+  box-shadow: 0 -0.2rem 1rem 0.2rem rgba(255, 255, 255, 0.5);
   color: #333;
 }
 
