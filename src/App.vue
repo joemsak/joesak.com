@@ -262,16 +262,6 @@ import 'normalize.css'
 
 export default {
   name: 'app',
-
-  created () {
-    const vh = window.innerHeight * 0.01
-    document.documentElement.style.setProperty('--vh', `${vh}px`)
-
-    window.addEventListener('resize', () => {
-      const vh = window.innerHeight * 0.01
-      document.documentElement.style.setProperty('--vh', `${vh}px`)
-    })
-  },
 }
 </script>
 
@@ -281,6 +271,7 @@ export default {
 html,
 body {
   font-family: 'Oswald', sans-serif;
+  height: 100%;
 }
 
 * {
@@ -326,14 +317,9 @@ header {
   }
 }
 
-#projects {
-  height: auto;
-  min-height: 100vh;
-}
-
 section {
-  height: 100vh;
-  height: calc(var(--vh, 1vh) * 100);
+  min-height: 100vh;
+  min-height: calc(var(--vh, 1vh) * 100);
   position: -webkit-sticky;
   position: sticky;
   top: 0;
