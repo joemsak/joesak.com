@@ -271,7 +271,6 @@ export default {
 html,
 body {
   font-family: 'Oswald', sans-serif;
-  height: 100%;
 }
 
 * {
@@ -319,7 +318,6 @@ header {
 
 section {
   min-height: 100vh;
-  min-height: calc(var(--vh, 1vh) * 100);
   position: -webkit-sticky;
   position: sticky;
   top: 0;
