@@ -272,21 +272,6 @@ export default {
       document.documentElement.style.setProperty('--vh', `${vh}px`)
     })
   },
-
-  mounted () {
-    const sections = document.querySelectorAll('section')
-
-    sections.forEach(section => {
-      window.addEventListener('scroll', () => {
-        if (window.pageYOffset >= section.offsetTop) {
-          console.log(section)
-          section.style.overflowY = 'scroll'
-        } else {
-          section.style.overflowY = null
-        }
-      })
-    })
-  },
 }
 </script>
 
