@@ -327,6 +327,11 @@ header {
   }
 }
 
+#projects {
+  height: auto;
+  min-height: 100vh;
+}
+
 section {
   height: 100vh;
   height: calc(var(--vh, 1vh) * 100);
@@ -335,11 +340,6 @@ section {
   top: 0;
   z-index: 2;
   color: #ddd;
-
-  &#projects {
-    height: 100%;
-    min-height: 100vh;
-  }
 
   div {
     padding: 1rem;
