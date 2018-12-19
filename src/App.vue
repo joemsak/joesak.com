@@ -262,6 +262,17 @@ import 'normalize.css'
 
 export default {
   name: 'app',
+
+  created () {
+    let vh = window.innerHeight * 0.01;
+
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+    window.addEventListener('resize', () => {
+      let vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+    });
+  },
 }
 </script>
 
@@ -318,7 +329,8 @@ header {
 }
 
 section {
-  min-height: 105vh;
+  min-height: 100vh;
+  min-height: calc(var(--vh, 1vh) * 100);
   position: -webkit-sticky;
   position: sticky;
   top: 0;
