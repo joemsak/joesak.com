@@ -462,5 +462,9 @@ section {
       width: 100%;
     }
   }
+
+  #skillset {
+    height: 100vh;
+  }
 }
 </style>
