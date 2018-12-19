@@ -14,7 +14,7 @@
     </header>
 
     <section class="background--gray">
-      <div>
+      <div class="hidden-sm">
         <h2>Languages</h2>
         <h2>Frameworks</h2>
         <h2>Technologies</h2>
@@ -25,6 +25,7 @@
         <span class="section-note">Professional Experience</span>
 
         <ul>
+          <h2 class="hidden-md">Languages</h2>
           <li>Ruby</li>
           <li>Javascript</li>
           <li>HTML5</li>
@@ -32,6 +33,7 @@
         </ul>
 
         <ul>
+          <h2 class="hidden-md">Frameworks</h2>
           <li>Ruby on Rails</li>
           <li>Vue</li>
           <li>Bootstrap</li>
@@ -41,6 +43,7 @@
         </ul>
 
         <ul>
+          <h2 class="hidden-md">Technologies</h2>
           <li>Heroku</li>
           <li>Amazon S3</li>
           <li>Cloudflare</li>
@@ -50,6 +53,7 @@
         </ul>
 
         <ul>
+          <h2 class="hidden-md">Skills</h2>
           <li>UX Development</li>
           <li>Project management</li>
           <li>Discovery / ideation</li>
@@ -63,6 +67,7 @@
         <span class="section-note">Have Dabbled / Practiced</span>
 
         <ul>
+          <h2 class="hidden-md">Languages</h2>
           <li>Elixir</li>
           <li>Clojure</li>
           <li>Python</li>
@@ -73,6 +78,7 @@
         </ul>
 
         <ul>
+          <h2 class="hidden-md">Frameworks</h2>
           <li>React</li>
           <li>Angular</li>
           <li>Ember</li>
@@ -80,6 +86,7 @@
         </ul>
 
         <ul>
+          <h2 class="hidden-md">Technologies</h2>
           <li>GraphQL</li>
           <li>MongoDB</li>
           <li>Google Firebase</li>
@@ -88,6 +95,7 @@
         </ul>
 
         <ul>
+          <h2 class="hidden-md">Skills</h2>
           <li>Tech leadership</li>
           <li>Copy writing</li>
           <li>UI Design</li>
@@ -310,10 +318,11 @@ header {
 }
 
 section {
-  min-height: 100vh;
+  min-height: 105vh;
   position: -webkit-sticky;
   position: sticky;
   top: 0;
+  overflow-y: scroll;
   z-index: 2;
   color: #ddd;
 
@@ -353,7 +362,8 @@ section {
       margin-top: 1.5rem;
       list-style: none;
 
-      li {
+      li,
+      h2 {
         margin: 0 0 0.5rem;
       }
     }
@@ -383,6 +393,14 @@ section {
 }
 
 @media(max-width: 900px) {
+  .hidden-sm {
+    display: none;
+  }
+
+  .hidden-md {
+    display: block;
+  }
+
   #greeting div {
     width: 90%;
   }
@@ -395,7 +413,7 @@ section {
     ul,
     h2,
     span:not(.section-note) {
-      width: 33%;
+      width: 50%;
     }
   }
 }
@@ -413,6 +431,14 @@ section {
 }
 
 @media(max-width: 600px) {
+  .hidden-sm {
+    display: none;
+  }
+
+  .hidden-md {
+    display: block;
+  }
+
   #greeting div {
     h1 {
       font-size: 4rem;
@@ -431,7 +457,7 @@ section {
     ul,
     h2,
     span:not(.section-note) {
-      width: 50%;
+      width: 100%;
     }
   }
 }
