@@ -80,6 +80,7 @@
         </ul>
 
         <ul>
+          <li>GraphQL</li>
           <li>MongoDB</li>
           <li>Google Firebase</li>
           <li>Amazon EC2</li>
