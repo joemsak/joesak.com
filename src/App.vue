@@ -281,7 +281,6 @@ export default {
 html,
 body {
   font-family: 'Oswald', sans-serif;
-  width: 100%;
 }
 
 * {
