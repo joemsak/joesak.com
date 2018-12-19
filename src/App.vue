@@ -13,7 +13,7 @@
       </div>
     </header>
 
-    <section class="background--gray">
+    <section id="skillset" class="background--gray">
       <div class="hidden-sm">
         <h2>Languages</h2>
         <h2>Frameworks</h2>
@@ -144,7 +144,7 @@
       </div>
     </section>
 
-    <section class="background--white">
+    <section id="projects" class="background--white">
       <div>
         <h2>Projects</h2>
       </div>
@@ -264,14 +264,28 @@ export default {
   name: 'app',
 
   created () {
-    let vh = window.innerHeight * 0.01;
-
-    document.documentElement.style.setProperty('--vh', `${vh}px`);
+    const vh = window.innerHeight * 0.01
+    document.documentElement.style.setProperty('--vh', `${vh}px`)
 
     window.addEventListener('resize', () => {
-      let vh = window.innerHeight * 0.01;
-      document.documentElement.style.setProperty('--vh', `${vh}px`);
-    });
+      const vh = window.innerHeight * 0.01
+      document.documentElement.style.setProperty('--vh', `${vh}px`)
+    })
+  },
+
+  mounted () {
+    const sections = document.querySelectorAll('section')
+
+    sections.forEach(section => {
+      window.addEventListener('scroll', () => {
+        if (window.pageYOffset >= section.offsetTop) {
+          console.log(section)
+          section.style.overflowY = 'scroll'
+        } else {
+          section.style.overflowY = null
+        }
+      })
+    })
   },
 }
 </script>
@@ -329,14 +343,18 @@ header {
 }
 
 section {
-  min-height: 100vh;
-  min-height: calc(var(--vh, 1vh) * 100);
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  overflow-y: scroll;
   z-index: 2;
   color: #ddd;
+
+  &#projects {
+    height: 100%;
+    min-height: 100vh;
+  }
 
   div {
     padding: 1rem;
@@ -402,6 +420,10 @@ section {
   background: white;
   box-shadow: 0 -0.2rem 1rem 0.2rem rgba(255, 255, 255, 0.5);
   color: #333;
+}
+
+.hidden-md {
+  display: none;
 }
 
 @media(max-width: 900px) {
