@@ -3,7 +3,7 @@
     <div id="profile">
       <a href="https://instagram.com/sakjosep">
         <img
-          src="/me-sm-cropped.jpg"
+          src="me-sm-cropped.jpg"
           alt="Profile photo of Joe standing in agave fields, with mountains behind me"
         />
 
