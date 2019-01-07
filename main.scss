@@ -17,13 +17,18 @@ header {
   justify-content: center;
   flex-direction: column;
   height: 100vh;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background-color: white;
+  background-clip: content-box;
+  padding: 60px 0 0;
 }
 
 #greeting {
   display: flex;
   justify-content: space-around;
-  position: fixed;
-  z-index: 1;
 
   div {
     width: 50%;
@@ -46,12 +51,21 @@ header {
   }
 }
 
+section#name {
+  min-height: auto;
+  height: auto;
+  top: 0;
+  padding: 0.5rem 1rem;
+  z-index: 1;
+  color: black;
+}
+
 section {
   min-height: 100vh;
   position: -webkit-sticky;
   position: sticky;
-  top: 0;
-  z-index: 2;
+  top: 60px;
+  z-index: 3;
   color: #ddd;
 
   div {
@@ -195,5 +209,19 @@ section {
   #skillset {
     height: 100vh;
     overflow: hidden;
+  }
+
+  #name {
+    h1 {
+      font-size: 1.3rem;
+    }
+  }
+
+  header {
+    padding-top: 40px;
+  }
+
+  section {
+    top: 40px;
   }
 }
