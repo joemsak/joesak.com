@@ -1,3 +1,5 @@
+![Docker Image CI](https://github.com/joemsak/joesak.com/workflows/Docker%20Image%20CI/badge.svg)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

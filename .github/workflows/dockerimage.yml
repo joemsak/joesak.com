@@ -1,0 +1,40 @@
+name: Docker Image CI
+
+env:
+  GIT_REF: ${{ github.ref }}
+  GIT_SHA: ${{ github.sha }}
+  DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+  DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+  CLUSTER_NAME: "web"
+  KUBE_NAMESPACE: "joesak-com"
+  KUBE_CA_PEM_FILE: ${{ secrets.KUBE_CA_PEM_FILE }}
+  KUBE_TOKEN: ${{ secrets.KUBE_TOKEN }}
+  KUBE_URL: ${{ secrets.KUBE_URL }}
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  deploy-image:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build & push the Docker image
+      run: |
+        docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+        docker build . --file Dockerfile --tag joemsak/joesak.com:$GIT_SHA
+        docker push joemsak/joesak.com:$GIT_SHA
+
+    - uses: actions/checkout@v2
+    - name: Update cluster
+      run: |
+        kubectl version
+        kubectl config set-cluster "$CLUSTER_NAME" --server="$KUBE_URL" --certificate-authority="$KUBE_CA_PEM_FILE"
+        kubectl config set-credentials "$CLUSTER_NAME" --token="$KUBE_TOKEN"
+        kubectl config set-context "$CLUSTER_NAME" --cluster="$CLUSTER_NAME" --user="$CLUSTER_NAME" --namespace="$KUBE_NAMESPACE"
+        kubectl config use-context "$CLUSTER_NAME"
+        kubectl apply -k .kubernetes
