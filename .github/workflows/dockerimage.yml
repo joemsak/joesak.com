@@ -5,7 +5,7 @@ env:
   GIT_SHA: ${{ github.sha }}
   DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
   DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-  KUBECONFIG: ${{ secrets.KUBE_CONFIG }}
+  KUBE_CONFIG: ${{ secrets.KUBE_CONFIG }}
 
 on:
   push:
@@ -27,4 +27,7 @@ jobs:
 
     - uses: actions/checkout@v2
     - name: Update cluster
-      run: kubectl apply -k .kubernetes
+      run: |
+        mkdir ~/.kube/
+        echo $KUBE_CONFIG > ~/.kube/config
+        kubectl apply -k .kubernetes
