@@ -5,7 +5,6 @@ env:
   GIT_SHA: ${{ github.sha }}
   DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
   DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-  KUBECONFIG: ${{ secrets.KUBECONFIG }}
 
 on:
   push:
@@ -25,9 +24,8 @@ jobs:
         docker build . --file Dockerfile --tag joemsak/joesak.com:$GIT_SHA
         docker push joemsak/joesak.com:$GIT_SHA
 
-    - uses: actions/checkout@v2
-    - name: Update cluster
-      run: |
-        echo $KUBECONFIG > kubeconfig.yaml
-        cat kubeconfig.yaml
-        kubectl apply -k .kubernetes --kubeconfig kubeconfig.yaml
+    - uses: danielr1996/kubectl-action@1.0.0
+      name: Deploy
+      with:
+        kubeconfig: ${{ secrets.KUBECONFIG }}
+        args: apply -k .kubernetes
