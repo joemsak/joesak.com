@@ -11,7 +11,13 @@ spec:
     - www.joesak.com
     secretName: web-tls
   rules:
-  - host: *.joesak.com
+  - host: joesak.com
+    http:
+      paths:
+      - backend:
+          serviceName: web
+          servicePort: 80
+  - host: www.joesak.com
     http:
       paths:
       - backend:
