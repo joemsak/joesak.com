@@ -9,7 +9,7 @@ spec:
   - hosts:
     - joesak.com
     - www.joesak.com
-    secretName: web-tls
+    secretName: letsencrypt-certs
   rules:
   - host: joesak.com
     http:

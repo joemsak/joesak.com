@@ -4,6 +4,7 @@ kind: Kustomization
 namespace: joesak-com
 
 resources:
-- service.yaml
+- jobs/lets-encrypt.yml
+- services/web.yml
 - deployment.yaml
 - ingress.yaml
