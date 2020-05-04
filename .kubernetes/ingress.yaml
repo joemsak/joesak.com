@@ -11,7 +11,9 @@ spec:
     - www.joesak.com
     secretName: web-tls
   rules:
-  - host: joesak.com
+  - hosts:
+    - joesak.com
+    - www.joesak.com
     http:
       paths:
       - backend:
