@@ -4,7 +4,6 @@ kind: Kustomization
 namespace: joesak-com
 
 resources:
-- secrets.yaml
 - service.yaml
 - deployment.yaml
 - ingress.yaml
