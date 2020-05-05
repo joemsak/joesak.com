@@ -9,15 +9,9 @@ spec:
   - hosts:
     - joesak.com
     - www.joesak.com
-    secretName: letsencrypt-certs
+    secretName: web-tls
   rules:
   - host: joesak.com
-    http:
-      paths:
-      - backend:
-          serviceName: web
-          servicePort: 80
-  - host: www.joesak.com
     http:
       paths:
       - backend:
